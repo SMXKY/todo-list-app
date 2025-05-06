@@ -1,0 +1,443 @@
+.create-task-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background: none;
+  transition: ease-in-out 0.2s;
+}
+
+.create-task-btn:hover,
+.calendar-btn:hover {
+  opacity: 0.8;
+}
+
+.create-task-btn:active,
+.calendar-btn:active {
+  opacity: 0.6;
+}
+
+.create-task-btn img {
+  /* width: 1.8rem; */
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.create-task-btn p {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.calendar-btn {
+  background-color: var(--cta-color);
+  border: none;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
+  padding: 0.4rem 1.6rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  transition: ease-in-out 0.2s;
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.4);
+  /* backdrop-filter: blur(1px); */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 8rem;
+  transition: ease-in-out 0.2s;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.show-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.create-and-update-task-form {
+  background-color: var(--background-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 35rem;
+  transform: translateY(8rem) scale(0.5);
+  transition: ease-in-out 0.35s;
+  height: fit-content;
+}
+
+.show-create-task-form {
+  transform: translateY(0rem) scale(1);
+}
+
+.task-title,
+.task-description {
+  display: block;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0rem 0.5rem;
+  width: 100%;
+  /* background-color: red; */
+  /* border: solid 1px black; */
+  margin-bottom: 0.5rem;
+}
+
+.task-title:focus,
+.task-description:focus,
+.priority-select:focus {
+  outline: none;
+}
+
+.task-description {
+  font-size: 1rem;
+  font-weight: 400;
+  /* border: solid 1px black; */
+  /* height: 2rem; */
+}
+
+.create-task-options-btns {
+  padding: 0rem 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.date-time-calendar {
+  margin-top: 1.8rem;
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.date-time-btn {
+  background-color: var(--background-color);
+  border: none;
+  /* border: solid 1px var(--border-color); */
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  /* width: 7rem; */
+  margin-right: 2rem;
+}
+
+.date-time-btn:hover {
+  opacity: 0.8;
+}
+
+.date-time-btn:active {
+  opacity: 0.6;
+}
+
+.date-time-btn img {
+  width: 1.1rem;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.date-time-btn p {
+  color: var(--tetiary-color);
+}
+
+.priority-select {
+  /* border: solid 1px var(--cta-color); */
+  border: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  /* padding: 0rem 0.2rem; */
+  color: var(--cta-color);
+}
+
+.priority-select option {
+  color: var(--text-color);
+}
+
+.complete-create-task-opitons {
+  padding: 0rem 0.5rem;
+  display: flex;
+  justify-content: right;
+}
+
+.complete-create-task-opitons button {
+  padding: 0.3rem 1.2rem;
+  cursor: pointer;
+  border: none;
+  color: var(--secondary-text-color);
+  background-color: var(--cta-color);
+  border-radius: 0.2rem;
+  transition: ease-in-out 0.2s;
+}
+
+.complete-create-task-opitons button:hover {
+  opacity: 0.8;
+}
+
+.complete-create-task-opitons button:active {
+  opacity: 0.6;
+}
+
+.complete-create-task-opitons .cancel-todo-btn {
+  margin-right: 0.5rem;
+  background-color: #f5f5f5;
+  color: var(--text-color);
+}
+
+.alert {
+  position: fixed;
+  top: 2rem;
+  left: 1rem;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  transition: ease-in-out 0.15s;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 20rem;
+  height: 4.5rem;
+  padding: 0.9rem 0.9rem 0rem 0.9rem;
+  border-radius: 0.5rem;
+  border-left: solid 0.35rem black;
+  /* left: -25rem; */
+  transform: translateX(-25rem);
+  z-index: 100;
+  background-color: var(--background-color);
+}
+
+.alert-content {
+  display: flex;
+  align-items: top;
+}
+
+.alert-icon {
+  height: 1.2rem;
+  margin-right: 1rem;
+}
+
+.alert-title {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.alert-note {
+  font-size: 0.8rem;
+}
+
+.close-btn {
+  width: 0.8rem;
+  height: 0.8rem;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.show-alert {
+  transform: translateX(1rem);
+  /* z-index: 101; */
+}
+
+.all-tasks {
+  width: 100%;
+  /* background-color: red; */
+  margin-top: 2.5rem;
+}
+
+.todo:hover {
+  opacity: 0.8;
+}
+
+.todo-title {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px var(--border-color);
+  padding: 0.8rem 0rem;
+  cursor: pointer;
+  background-color: var(--background-color);
+  z-index: 5000;
+  /* background-color: red; */
+}
+
+.todo-title img {
+  margin-right: 1rem;
+}
+
+.todo-title p {
+  color: var(--gray-text-color);
+}
+
+.todo-entries {
+  padding: 0rem 4rem;
+  transform: translateY(-3rem);
+  backdrop-filter: blur(4px);
+  transition: ease-in-out 0.3s;
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: 8;
+}
+
+.rotate-up {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.show-entry {
+  transform: translateY(0rem);
+  backdrop-filter: blur(0px);
+  visibility: visible;
+  position: unset;
+  width: unset;
+  height: unset;
+  overflow: unset;
+  /* transition: ease-in-out 0.6s; */
+}
+
+.todo-entry {
+  padding: 1rem 0rem;
+  border-bottom: solid 1px var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-p1 {
+  background-color: #f6dad8;
+  border-color: #d1453b;
+}
+
+.todo-p2 {
+  background-color: #d3e2f9;
+  border-color: #2f80ed;
+}
+
+.todo-p3 {
+  background-color: #fbe7ce;
+  border-color: #eb8909;
+}
+
+.todo-entry-check {
+  height: 1.2rem;
+  width: 1.2rem;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.todo-entry-check:hover,
+.delete-todo-btn:hover {
+  opacity: 0.8;
+}
+
+.todo-entry-check:active,
+.delete-todo-btn:active {
+  opacity: 0.6;
+}
+
+.todo-entry-head {
+  display: flex;
+  align-items: center;
+}
+
+.todo-entry-head p {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.todo-entry {
+  display: flex;
+  align-items: top;
+}
+
+.todo-content {
+  margin-top: 1rem;
+  padding: 0rem 2.2rem;
+}
+
+.todo-description {
+  font-weight: 300;
+  color: var(--gray-text-color);
+}
+
+.todo-entry-options {
+  margin-top: 1rem;
+}
+
+.todo-due-time {
+  display: flex;
+  align-items: center;
+}
+
+.todo-due-time p {
+  font-size: 0.8rem;
+  color: var(--time-color);
+}
+
+.todo-due-time img {
+  margin-right: 0.5rem;
+}
+
+.todo-entry-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-entry-options-rights {
+  display: flex;
+  align-items: center;
+}
+
+.todo-entry-options-rights p {
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+.todo-entry-options-rights p span {
+  font-weight: 500;
+}
+
+.delete-todo-btn {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.todo-title .bold-tiltle {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.done-todo .todo-entry-head .todo-entry-check {
+  border-color: #9b9999;
+  background-color: #e4e4e4;
+}
+
+.done-todo .todo-entry-head p {
+  color: #808080;
+  text-decoration: line-through;
+}
+
+.done-todo .todo-content .todo-description {
+  filter: blur(4px);
+}
+
+.todo-entry {
+  cursor: pointer;
+}
+
+.hide-btn {
+  display: none;
+}
+
+.delet-btn {
+  margin-left: 1rem;
+}

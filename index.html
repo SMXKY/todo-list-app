@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon (2).ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/app.css" />
+    <link rel="stylesheet" href="./styles/task-page.css" />
+    <link rel="stylesheet" href="./styles/calendar.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="logo">
+        <p>TO-DO</p>
+        <img src="./assets/logo (1).png" alt="logo" />
+      </div>
+
+      <div class="app-body-task js-task-page">
+        <div class="header">
+          <button class="create-task-btn js-create-task-btn">
+            <img src="./assets/Add.png" alt="add-task-icon" />
+            <p>Create task</p>
+          </button>
+
+          <button class="calendar-btn js-calendar-page-btn">Calendar</button>
+        </div>
+
+        <div class="all-tasks js-all-tasks"></div>
+      </div>
+
+      <div class="app-body-calendar hide-page js-calendar-page">
+        <div class="header">
+          <button class="create-task-btn month-picker js-month-picker-btn">
+            <img src="./assets/calendar-todo.png" alt="add-task-icon" />
+            <p class="js-month-text">May 2025</p>
+          </button>
+
+          <input
+            type="month"
+            name="bmonth"
+            class="date-time-calendar js-month-pick"
+          />
+
+          <button class="calendar-btn js-task-page-btn">Tasks</button>
+        </div>
+
+        <div class="calendar js-calendar-entries">
+          <p>Sun</p>
+          <p>Mon</p>
+          <p>Tues</p>
+          <p>Wed</p>
+          <p>Thus</p>
+          <p>Fri</p>
+          <p>Sat</p>
+        </div>
+      </div>
+
+      <div class="overlay js-overlay">
+        <form class="create-and-update-task-form js-create-task-form">
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Task Title"
+            class="task-title js-task-title"
+          />
+          <!-- <input type="text" name="" id="" placeholder="Description" /> -->
+          <textarea
+            name=""
+            id=""
+            placeholder="Description"
+            class="task-description js-task-description"
+            cols="1"
+            rows="1"
+          ></textarea>
+
+          <div class="create-task-options-btns">
+            <input
+              type="datetime-local"
+              name=""
+              id="dateBtn"
+              class="js-calendar date-time-calendar js-task-date-time"
+            />
+
+            <button class="date-time-btn js-date-time-btn" type="button">
+              <img src="./assets/calendar-todo.png" alt="calendar-icon" />
+              <p class="js-date-time-text">Today</p>
+            </button>
+
+            <select name="" id="" class="priority-select js-task-priority">
+              <option value="p1">P1</option>
+              <option value="p2">P2</option>
+              <option value="p3">P3</option>
+            </select>
+          </div>
+
+          <div class="complete-create-task-opitons">
+            <button
+              type="button"
+              class="cancel-todo-btn js-close-create-task-form"
+            >
+              Cancel
+            </button>
+            <button class="js-save-task-btn create-btn">Create Task</button>
+            <button class="js-edit-task-btn edit-btn hide-btn">
+              Edit task
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="alert js-alert-holder"></div>
+    </div>
+
+    <script src="./scripts/main.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+.app {
+  width: 70vw;
+  /* background-color: red; */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo p {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-right: 0.8rem;
+}
+
+.logo img {
+  /* width: 1.8rem; */
+  /* height: 1.5rem; */
+  object-fit: cover;
+}
+
+.app-body-task,
+.app-body-calendar {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.app-body-task .header,
+.app-body-calendar header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
